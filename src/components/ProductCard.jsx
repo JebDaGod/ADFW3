@@ -1,6 +1,8 @@
 import "./ProductCard.css";
 
-function ProductCard({ name, price, image, description }) {
+function ProductCard({ product, addToCart }) {
+    const { name, price, image, description } = product;
+
     return (
         <div className="product-card">
             <img
@@ -13,6 +15,10 @@ function ProductCard({ name, price, image, description }) {
                 <h2>{name}</h2>
                 <p>${price}</p>
                 <p>{description}</p>
+
+                <button onClick={() => addToCart(product)}>
+                    Add to Cart
+                </button>
             </div>
         </div>
     );
